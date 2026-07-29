@@ -4,10 +4,9 @@
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
     "start": "cd backend && node index.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "cd backend && npm install && cd ../frontend && npm install && npm run build"
   },
   "engines": {
     "node": "20.x"
   }
 }
-

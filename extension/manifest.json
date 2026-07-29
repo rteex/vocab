@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Vocab — Save words",
+  "version": "1.0.0",
+  "description": "Highlight a word on any page and save it to your Vocab vocabulary trainer.",
+  "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "32": "icon.png" }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": { "32": "icon.png" }
+}

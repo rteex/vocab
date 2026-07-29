@@ -1,0 +1,44 @@
+.wrap { display: flex; flex-direction: column; gap: 8px; max-width: 520px; }
+.title { font-size: 20px; color: #d0e0d0; margin-bottom: 12px; }
+
+.label {
+  font-size: 12px; color: #556655; text-transform: uppercase;
+  letter-spacing: 0.08em; margin-top: 12px; display: flex; align-items: center; gap: 10px;
+}
+
+.wordRow { display: flex; gap: 8px; }
+
+.langSelect {
+  background: #0f1612; border: 1px solid #2a3d2e; border-radius: 6px;
+  color: #7a9a80; font-size: 13px; padding: 10px 8px; outline: none; flex-shrink: 0;
+}
+
+.input {
+  width: 100%; background: #0f1612; border: 1px solid #2a3d2e; border-radius: 6px;
+  color: #d0e0d0; font-size: 15px; padding: 10px 12px; outline: none;
+}
+.input:focus { border-color: #6db88a; }
+
+.textarea {
+  width: 100%; background: #0f1612; border: 1px solid #2a3d2e; border-radius: 6px;
+  color: #d0e0d0; font-size: 14px; padding: 10px 12px; outline: none; resize: vertical;
+  font-family: inherit;
+}
+.textarea:focus { border-color: #6db88a; }
+
+.translateBtn {
+  background: none; border: 1px solid #2a3d2e; border-radius: 12px;
+  color: #6db88a; font-size: 12px; padding: 3px 10px; cursor: pointer; margin-left: auto;
+}
+.translateBtn:hover:not(:disabled) { background: #1e3028; }
+.translateBtn:disabled { opacity: 0.4; cursor: default; }
+
+.saveBtn {
+  margin-top: 20px; background: #2a5c3a; border: none; border-radius: 8px;
+  color: #c0e8c8; font-size: 15px; font-weight: 600; padding: 13px; cursor: pointer;
+}
+.saveBtn:hover:not(:disabled) { background: #336b44; }
+.saveBtn:disabled { opacity: 0.5; cursor: default; }
+.savedBtn { background: #1e4d30; color: #6db88a; }
+
+.error { color: #cc6666; font-size: 13px; margin-top: 4px; }

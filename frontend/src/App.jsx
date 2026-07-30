@@ -9,7 +9,20 @@ import styles   from './App.module.css'
 export default function App() {
   const [token, setToken]   = useState(() => localStorage.getItem('vocab_token') || '')
   const [user,  setUser]    = useState(null)
-  const [screen, setScreen] = useState('review')  // review | list | add | profile
+  const [screen, setScreen] = useState('review')
+  const [sharedWord, setSharedWord] = useState(null)
+
+  // Handle PWA share target — /share?text=word
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const text   = params.get('text') || params.get('title') || ''
+    if (text.trim()) {
+      setSharedWord(text.trim())
+      setScreen('add')
+      // Clean URL without reloading
+      window.history.replaceState({}, '', '/')
+    }
+  }, [])  // review | list | add | profile
 
   useEffect(() => {
     if (!token) return
@@ -52,7 +65,7 @@ export default function App() {
       <main className={styles.main}>
         {screen === 'review'  && <Review  token={token} user={user} />}
         {screen === 'list'    && <WordList token={token} onEdit={() => setScreen('list')} />}
-        {screen === 'add'     && <AddWord  token={token} user={user} onAdded={() => setScreen('list')} />}
+        {screen === 'add'     && <AddWord  token={token} user={user} initialWord={sharedWord} onAdded={() => { setSharedWord(null); setScreen('list') }} />}
         {screen === 'profile' && <Profile  token={token} user={user} onUpdated={setUser} onLogout={handleLogout} />}
       </main>
     </div>

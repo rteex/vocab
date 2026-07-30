@@ -1,4 +1,5 @@
-const BASE_URL = 'https://your-vocab-app.herokuapp.com'  // ← set your Heroku URL
+const BASE_URL = 'https://vocab-b0d8ce372614.herokuapp.com'  // ← set your Heroku URL
+// const BASE_URL = 'http://localhost:3001'
 
 const content = document.getElementById('content')
 let token = ''

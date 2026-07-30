@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './AddWord.module.css'
 
 const LANGS = [
@@ -12,8 +12,8 @@ const LANGS = [
   { code: 'ZH', label: 'Chinese'  },
 ]
 
-export default function AddWord({ token, user, onAdded }) {
-  const [word,       setWord]       = useState('')
+export default function AddWord({ token, user, onAdded, initialWord = '' }) {
+  const [word,       setWord]       = useState(initialWord)
   const [meaning,    setMeaning]    = useState('')
   const [example,    setExample]    = useState('')
   const [sourceLang, setSourceLang] = useState('')
@@ -22,14 +22,17 @@ export default function AddWord({ token, user, onAdded }) {
   const [saved,      setSaved]      = useState(false)
   const [error,      setError]      = useState('')
 
-  async function fetchTranslation() {
-    if (!word.trim()) return
+  // Auto-translate if word arrives pre-filled from share target
+  useEffect(() => {
+    if (initialWord) fetchTranslation(initialWord)
+  }, [initialWord])
+
+  async function fetchTranslation(w) {
+    const target = (w || word).trim()
+    if (!target) return
     setTranslating(true)
     try {
-      const params = new URLSearchParams({
-        text:   word.trim(),
-        target: user.nativeLang,
-      })
+      const params = new URLSearchParams({ text: target, target: user.nativeLang })
       if (sourceLang) params.append('source', sourceLang)
       const res  = await fetch(`/api/translate?${params}`)
       const data = await res.json()

@@ -76,8 +76,8 @@ export default function AddWord({ token, user, onAdded, initialWord = '' }) {
           className={styles.input}
           value={word}
           onChange={e => setWord(e.target.value)}
-          onBlur={fetchTranslation}
-          onKeyDown={e => e.key === 'Tab' && fetchTranslation()}
+          onBlur={() => fetchTranslation(word)}
+          onKeyDown={e => e.key === 'Tab' && fetchTranslation(word)}
           placeholder="type a word…"
           autoFocus
         />
@@ -85,7 +85,7 @@ export default function AddWord({ token, user, onAdded, initialWord = '' }) {
 
       <label className={styles.label}>
         Meaning ({user.nativeLang})
-        <button className={styles.translateBtn} onClick={fetchTranslation} disabled={translating}>
+        <button className={styles.translateBtn} onClick={() => fetchTranslation(word)} disabled={translating}>
           {translating ? 'translating…' : '↻ translate'}
         </button>
       </label>

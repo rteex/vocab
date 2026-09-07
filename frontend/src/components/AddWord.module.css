@@ -1,13 +1,12 @@
-.wrap { display: flex; flex-direction: column; gap: 8px; max-width: 520px; }
+.wrap { display: flex; flex-direction: column; gap: 6px; max-width: 560px; }
 .title { font-size: 20px; color: #d0e0d0; margin-bottom: 12px; }
 
 .label {
   font-size: 12px; color: #556655; text-transform: uppercase;
-  letter-spacing: 0.08em; margin-top: 12px; display: flex; align-items: center; gap: 10px;
+  letter-spacing: 0.08em; margin-top: 10px; display: flex; align-items: center; gap: 10px;
 }
 
 .wordRow { display: flex; gap: 8px; }
-
 .langSelect {
   background: #0f1612; border: 1px solid #2a3d2e; border-radius: 6px;
   color: #7a9a80; font-size: 13px; padding: 10px 8px; outline: none; flex-shrink: 0;
@@ -33,6 +32,43 @@
 .translateBtn:hover:not(:disabled) { background: #1e3028; }
 .translateBtn:disabled { opacity: 0.4; cursor: default; }
 
+.extraToggle {
+  background: none; border: none; color: #3a6040; font-size: 13px;
+  cursor: pointer; padding: 8px 0; text-align: left;
+}
+.extraToggle:hover { color: #6db88a; }
+
+.langsGrid { display: flex; flex-direction: column; gap: 6px; padding: 10px 0; }
+.langRow { display: flex; align-items: center; gap: 8px; }
+.langCode {
+  width: 48px; flex-shrink: 0; background: #0f1612; border: 1px solid #1e3028; border-radius: 5px;
+  color: #3a6040; font-size: 12px; font-family: monospace; padding: 7px 8px; outline: none;
+}
+.langCode:focus { border-color: #6db88a; }
+.langInput {
+  flex: 1; background: #0f1612; border: 1px solid #1e3028; border-radius: 5px;
+  color: #d0e0d0; font-size: 13px; padding: 7px 10px; outline: none;
+}
+.langInput:focus { border-color: #6db88a; }
+
+.cognateToggle {
+  display: flex; align-items: center; gap: 4px; font-size: 11px; color: #556655;
+  white-space: nowrap; flex-shrink: 0;
+}
+
+.removeRowBtn {
+  background: none; border: none; color: #556655; font-size: 13px; cursor: pointer;
+  padding: 2px 4px; flex-shrink: 0;
+}
+.removeRowBtn:hover { color: #cc6666; }
+
+.quickAddRow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.quickAddChip {
+  background: none; border: 1px dashed #2a3d2e; border-radius: 10px;
+  color: #3a6040; font-size: 11px; padding: 3px 9px; cursor: pointer; font-family: monospace;
+}
+.quickAddChip:hover { background: #1e3028; color: #6db88a; border-color: #6db88a; }
+
 .saveBtn {
   margin-top: 20px; background: #2a5c3a; border: none; border-radius: 8px;
   color: #c0e8c8; font-size: 15px; font-weight: 600; padding: 13px; cursor: pointer;
@@ -42,3 +78,11 @@
 .savedBtn { background: #1e4d30; color: #6db88a; }
 
 .error { color: #cc6666; font-size: 13px; margin-top: 4px; }
+
+.altRow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 2px; }
+.altLabel { font-size: 11px; color: #3a6040; }
+.altChip {
+  background: #141f18; border: 1px solid #1e3028; border-radius: 12px;
+  color: #7a9a80; font-size: 12px; padding: 3px 10px; cursor: pointer;
+}
+.altChip:hover { background: #1e3028; color: #a8d0b0; }

@@ -8,30 +8,54 @@
 }
 .search:focus { border-color: #6db88a; }
 
-.list { display: flex; flex-direction: column; gap: 6px; }
+.list { display: flex; flex-direction: column; gap: 4px; }
 
-.item {
-  background: #141f18; border: 1px solid #1e3028; border-radius: 8px;
-  padding: 12px 14px; display: flex; align-items: center; gap: 12px;
+.item { background: #141f18; border: 1px solid #1e3028; border-radius: 8px; overflow: hidden; }
+
+.itemHeader {
+  padding: 12px 14px; display: flex; align-items: center; gap: 12px; cursor: pointer;
 }
-.item:hover { border-color: #2a4030; }
+.itemHeader:hover { background: #172010; }
 
 .itemMain { flex: 1; display: flex; align-items: baseline; gap: 10px; min-width: 0; }
 .lang { font-size: 10px; color: #3a6040; text-transform: uppercase; flex-shrink: 0; }
-.word { font-size: 16px; color: #d0e0d0; flex-shrink: 0; }
-.meaning { font-size: 14px; color: #6db88a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lexeme { font-size: 16px; color: #d0e0d0; flex-shrink: 0; }
+.transl { font-size: 14px; color: #6db88a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.themeTag {
+  font-size: 10px; color: #7a9a80; background: #0f1f14; border: 1px solid #1e3028;
+  border-radius: 4px; padding: 2px 6px; text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0;
+}
+
+.themeRow { display: flex; flex-wrap: wrap; gap: 6px; }
+.themeChip, .themeChipActive {
+  font-size: 12px; border-radius: 6px; padding: 4px 10px; cursor: pointer; border: 1px solid #1e3028;
+}
+.themeChip { background: #141f18; color: #7a9a80; }
+.themeChip:hover { background: #172010; }
+.themeChipActive { background: #2a5c3a; color: #c0e8c8; border-color: #2a5c3a; }
 
 .itemMeta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .interval { font-size: 11px; color: #3a6040; }
-
-.dueNow  { font-size: 11px; color: #cc6666; }
-.dueSoon { font-size: 11px; color: #ccaa44; }
+.dueNow   { font-size: 11px; color: #cc6666; }
+.dueSoon  { font-size: 11px; color: #ccaa44; }
 .dueLater { font-size: 11px; color: #3a6040; }
 
 .deleteBtn {
   background: none; border: none; color: #3a4a3a; font-size: 14px; cursor: pointer; padding: 2px 6px;
 }
 .deleteBtn:hover { color: #cc6666; }
+
+.detail {
+  padding: 10px 14px 14px;
+  border-top: 1px solid #1a2a20;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.detailRow { display: flex; gap: 10px; font-size: 13px; color: #7a9a80; }
+.detailLabel { font-size: 10px; color: #3a6040; text-transform: uppercase; letter-spacing: 0.06em; min-width: 56px; padding-top: 2px; flex-shrink: 0; }
+.langTags { display: flex; flex-wrap: wrap; gap: 6px; }
+.langTag { background: #0f1f14; border: 1px solid #1e3028; border-radius: 4px; padding: 2px 7px; font-size: 12px; color: #7a9a80; }
+.langTag b { color: #3a6040; margin-right: 3px; }
+.notCognate { color: #cc6666; }
 
 .center { text-align: center; padding: 60px 0; color: #556655; }
 .empty  { color: #3a5040; font-size: 14px; text-align: center; padding: 40px 0; }

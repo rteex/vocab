@@ -1,0 +1,44 @@
+.wrap { display: flex; flex-direction: column; gap: 12px; max-width: 560px; }
+.title { font-size: 20px; color: #d0e0d0; margin-bottom: 4px; }
+.desc { font-size: 13px; color: #556655; line-height: 1.6; }
+.desc code { color: #6db88a; background: #0f1612; padding: 1px 5px; border-radius: 3px; }
+
+.exampleWrap { background: #0f1612; border: 1px solid #1e3028; border-radius: 8px; padding: 14px; }
+.exampleLabel { font-size: 11px; color: #3a6040; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.example { font-size: 12px; color: #7a9a80; font-family: monospace; line-height: 1.6; overflow-x: auto; margin: 0 0 10px; }
+
+.fileLabel { display: inline-block; cursor: pointer; }
+.fileInput { display: none; }
+.fileBtn {
+  display: inline-block; background: #1e3028; border: 1px solid #2a5c3a;
+  border-radius: 8px; color: #6db88a; font-size: 14px; padding: 10px 20px; cursor: pointer;
+}
+.fileBtn:hover { background: #2a4030; }
+
+.preview { background: #141f18; border: 1px solid #1e3028; border-radius: 8px; padding: 14px; }
+.previewCount { font-size: 13px; color: #7a9a80; margin-bottom: 10px; }
+.previewList { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+.previewItem { display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
+.previewLang { font-size: 10px; color: #3a6040; text-transform: uppercase; }
+.previewLexeme { color: #d0e0d0; }
+.previewTransl { color: #6db88a; }
+.previewTheme {
+  margin-left: auto; font-size: 10px; color: #7a9a80; background: #1e3028;
+  border-radius: 4px; padding: 2px 6px; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.previewMore { font-size: 12px; color: #3a5040; margin-top: 4px; }
+
+.importBtn {
+  width: 100%; background: #2a5c3a; border: none; border-radius: 8px;
+  color: #c0e8c8; font-size: 14px; font-weight: 600; padding: 12px; cursor: pointer;
+}
+.importBtn:hover:not(:disabled) { background: #336b44; }
+.importBtn:disabled { opacity: 0.5; cursor: default; }
+
+.result { background: #0f1f14; border: 1px solid #1e3028; border-radius: 8px; padding: 14px; }
+.resultOk { color: #6db88a; font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.resultSkipped { color: #ccaa44; font-size: 13px; }
+.resultErrors { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; }
+.resultError { font-size: 12px; color: #cc6666; font-family: monospace; }
+
+.error { color: #cc6666; font-size: 13px; }
